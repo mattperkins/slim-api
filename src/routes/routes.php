@@ -13,11 +13,23 @@ $app->get('/contact', function($request, $response){
 })->setName('contact');
 // \contact - - - - - - - - - - - - - - - - -
 
+// contact-success - - - - - - - - - - - - - - - - -
+$app->get('/contact/success', function($request, $response){
+  return $this->view->render($response, 'contact-success.twig');
+})->setName('contact-success');
+// \contact-success - - - - - - - - - - - - - - - - -
+
 // contact-POST - - - - - - - - - - - - - - - - -
 $app->post('/contact', function($request, $response){
-  $params = $request->getParams();
-  echo $params['email'];
+  return $response->withRedirect('contact/success');
 })->setName('contact');
+// \contact-POST - - - - - - - - - - - - - - - - -
+
+// contact-POST SINGLE PARAM - - - - - - - - - - - - - - - - -
+// $app->post('/contact', function($request, $response){
+//   $params = $request->getParams();
+//   echo $params['name'];
+// })
 // \contact-POST - - - - - - - - - - - - - - - - -
 
 
