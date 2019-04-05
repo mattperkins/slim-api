@@ -30,8 +30,14 @@ $app->get('/', function($request, $response) {
 });
 
 $app->get('/users', function($request, $response) {
+  $users = [
+    ['username' => 'Fred'],
+    ['username' => 'Sandy'],
+    ['username' => 'Bob'],
+  ];
+
   return $this->view->render($response, 'users.twig', [
-    'user' => 'Fred',
+    'lemon' => $users,
   ]);
 });
 
