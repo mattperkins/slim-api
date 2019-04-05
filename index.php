@@ -27,7 +27,7 @@ $container['view'] = function ($container) {
 
 $app->get('/', function($request, $response) {
   return $this->view->render($response, 'home.twig');
-});
+})->setName('home');
 
 $app->get('/users', function($request, $response) {
   $users = [
@@ -39,6 +39,6 @@ $app->get('/users', function($request, $response) {
   return $this->view->render($response, 'users.twig', [
     'lemon' => $users,
   ]);
-});
+})->setName('users.index');
 
 $app->run();
