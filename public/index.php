@@ -1,18 +1,22 @@
 <?php
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Message\ResponseInterface as Response;
+// use Psr\Http\Message\ServerRequestInterface as Request;
+// use Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 
 $app = new \Slim\App;
-$app->get('/hello/{name}', function (Request $request, Response $response, array $args) {
-    $name = $args['name'];
-    $response->getBody()->write("Hello, $name");
 
-    return $response;
+$container = $app->getContainer();
+
+$app->get('/', function() {
+  echo 'Home';
 });
 
-// Customer Routes
-require '../src/routes/customers.php';
+$app->get('/about', function() {
+  echo 'About';
+});
+
+// CONNECT ROUTES
+// require '../src/routes/index.php';
 
 $app->run();
