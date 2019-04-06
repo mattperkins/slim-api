@@ -13,4 +13,8 @@ class CategoryController
   public function show(){
     return 'Show single cat';
   }
+
+  public function alt(){
+    return 'Alternative';
+  }
 }
