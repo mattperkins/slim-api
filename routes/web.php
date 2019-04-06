@@ -1,5 +1,4 @@
-<?php 
-
+<?php ob_start();
 
 // home - - - - - - - - - - - - - - - - -
 $app->get('/', function($request, $response) {
