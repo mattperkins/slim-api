@@ -10,3 +10,4 @@ config
 notes.js
 notes.php
 vendor/*
+dbconfig.php
