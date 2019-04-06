@@ -45,3 +45,14 @@ $app->get('/users', function($request, $response) {
   ]);
 })->setName('users.index');
 // \users - - - - - - - - - - - - - - - - -
+
+
+// params - - - - - - - - - - - - - - - - -
+$app->get('/params/{id}', function($request, $response, $args){
+  $params = [
+    'id' => $args['id'],
+    'username' => 'Fred'
+  ];
+  return $this->view->render($response, 'params.twig', compact('params'));
+});
+// \params - - - - - - - - - - - - - - - - -
