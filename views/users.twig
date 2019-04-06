@@ -1,0 +1,14 @@
+{% extends 'scaffold.twig' %}
+
+{% block metaTitle %}
+  Users
+{% endblock %}
+
+{% block content %}
+
+  <h1>Users</h1>
+  {% for user in lemon %}
+    <p>{{user.username}}</p>
+  {% endfor %}
+
+{% endblock %}
