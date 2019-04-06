@@ -1,0 +1,16 @@
+{% extends 'scaffold.twig' %}
+{% block metaTitle %}Topics
+{% endblock %}
+
+
+{% block content %}
+
+  {% if not product %}
+    <h1>No Product Found...</h1>
+  {% else %}
+    <h1>{{ product.title }}</h1>
+    <h2>{{ product.details }}</h2>
+    <a href="{{product.email}}">{{product.email}}</a>
+  {% endif %}
+
+{% endblock %}
